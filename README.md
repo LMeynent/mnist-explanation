@@ -9,7 +9,7 @@ In their original paper, the researchers give advises on the kind of Deep Neural
  - Use sum-pooling layers abundantly, and prefer them to other types of pooling layers
  - In the linear layers (convolution and fully-connected), constrain biases to be zero or negative
 
-As such, I am using a very simple CNN: 2 convolutional layers with associated max-pooling layers followed by 3 fully-connected layers, using the RELU activation function. I use the Adam optimiser (using PyTorch default values) together with the Categorical Cross-Entropy loss function, over 10 epochs.
+As such, I am using a very simple CNN: 2 convolutional layers with associated average-pooling layers followed by 3 fully-connected layers, using the RELU activation function. I use the Adam optimiser (using PyTorch default values) together with the Categorical Cross-Entropy loss function, over 10 epochs.
 
 With 99.11% accuracy over the test set, the result is judged satisfactory enough to be used in the explanation framework.
 
