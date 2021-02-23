@@ -4,11 +4,14 @@ In this repository, I try to implement explanation methods as described by G. Mo
 
 ## Neural Network Implementation
 
-In their original paper, the researchers do not explicit the structure of the Deep Neural Network (DNN) used in the scope of their study, but only mention a composition of convolutional and fully-connected layers.
+In their original paper, the researchers give advises on the kind of Deep Neural Network (DNN) to be used in order to maximise their explainability. We will follow the following advices:
+ - Use as few fully-connected layers as needed to be accurate, and train these layers with dropout
+ - Use sum-pooling layers abundantly, and prefer them to other types of pooling layers
+ - In the linear layers (convolution and fully-connected), constrain biases to be zero or negative
 
 As such, I am using a very simple CNN: 2 convolutional layers with associated max-pooling layers followed by 3 fully-connected layers, using the RELU activation function. I use the Adam optimiser (using PyTorch default values) together with the Categorical Cross-Entropy loss function, over 10 epochs.
 
-With 98.69% accuracy over the test set, the result is judged satisfactory enough to be used in the explanation framework.
+With 99.11% accuracy over the test set, the result is judged satisfactory enough to be used in the explanation framework.
 
 
 ## References
