@@ -4,7 +4,12 @@ In this repository, I try to implement explanation methods as described by G. Mo
 
 ## Neural Network Implementation
 
-In their original paper, the researchers do not explicit the structure of the Deep Neural Network (DNN) used in the scope of their study.
+In their original paper, the researchers do not explicit the structure of the Deep Neural Network (DNN) used in the scope of their study, but only mention a composition of convolutional and fully-connected layers.
+
+As such, I am using a very simple CNN: 2 convolutional layers with associated max-pooling layers followed by 3 fully-connected layers, using the RELU activation function. I use the Adam optimiser (using PyTorch default values) together with the Categorical Cross-Entropy loss function, over 10 epochs.
+
+With 98.69% accuracy over the test set, the result is judged satisfactory enough to be used in the explanation framework.
+
 
 ## References
 
