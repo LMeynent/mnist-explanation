@@ -13,6 +13,17 @@ As such, I am using a very simple CNN: 2 convolutional layers with associated av
 
 With 99.11% accuracy over the test set, the result is judged satisfactory enough to be used in the explanation framework.
 
+## Explanation of Neural Network results
+
+Explanation is defined by the researchers as follows: `An explanation is the collection of features of the interpretable domain, that have contributed for a given example to produce a decision (e.g. classification or regression)`.
+
+In this repository, I will try to reproduce some of their methods on the DNN defined above.
+
+### Sensitivity Analysis
+
+In the scope of sensibility analysis, we study the gradient of the output with regard to the input. Here are the examples with regard to the selected samples. They are very similar to the one proposed by the research paper, I thus consider the replication to be successful.
+
+![Results of sensitivity analysis on my test DNN](/pic/sensitivity_analysis.png)
 
 ## References
 
