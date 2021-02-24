@@ -25,7 +25,7 @@ In the scope of sensibility analysis, we study the gradient of the output with r
 
 ![Results of sensitivity analysis on my test DNN](/pic/sensitivity_analysis.png)
 
-### Simple Taylor Decomposition
+### Simple Taylor Decomposition
 
 The simple Taylor decomposition uses the Taylor series of the gradient to derive a relevance score. In contrary to sensitivity analysis, this score can be either positive or negative and takes into account not only the gradient, but also the input value.
 
