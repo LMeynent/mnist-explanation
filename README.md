@@ -11,7 +11,7 @@ In their original paper, the researchers give advises on the kind of Deep Neural
 
 As such, I am using a very simple CNN: 2 convolutional layers with associated average-pooling layers followed by 3 fully-connected layers, using the RELU activation function. I use the Adam optimiser (using PyTorch default values) together with the Categorical Cross-Entropy loss function, over 10 epochs.
 
-With 99.11% accuracy over the test set, the result is judged satisfactory enough to be used in the explanation framework.
+With 98.89% accuracy over the test set, the result is judged satisfactory enough to be used in the explanation framework.
 
 ## Explanation of Neural Network results
 
@@ -24,6 +24,14 @@ In this repository, I will try to reproduce some of their methods on the DNN def
 In the scope of sensibility analysis, we study the gradient of the output with regard to the input. Here are the examples with regard to the selected samples. They are very similar to the one proposed by the research paper, I thus consider the replication to be successful.
 
 ![Results of sensitivity analysis on my test DNN](/pic/sensitivity_analysis.png)
+
+### Simple Taylor Decomposition
+
+The simple Taylor decomposition uses the Taylor series of the gradient to derive a relevance score. In contrary to sensitivity analysis, this score can be either positive or negative and takes into account not only the gradient, but also the input value.
+
+The results of this replication qualitatively match the paper's illustration.
+
+![Results of simple Taylor decomposition on my test DNN](/pic/simple_taylor.png)
 
 ## References
 
