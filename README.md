@@ -41,6 +41,14 @@ The results of this replication qualitatively match the paper's illustration.
 
 ![Results of LRP on my test DNN](/pic/lrp.png)
 
+### De-noising LRP by using translations
+
+The authors advise using what they call a "translation trick" to help de-noising heatmaps. The principle is simple: translating the base image, applying the LRP, doing the inverse translation and averaging results over all translations.
+
+Once again, the results of this replication qualitatively match the paper's illustration.
+
+![Results of LRP de-noised through 5*5 translations on my test DNN](/pic/lrp_denoised.png)
+
 ## References
 
 [1] Grégoire Montavon, Wojciech Samek, Klaus-Robert Müller, Methods for interpreting and understanding deep neural networks, Digital Signal Processing, Volume 73, 2018, Pages 1-15, ISSN 1051-2004, https://doi.org/10.1016/j.dsp.2017.10.011. (https://www.sciencedirect.com/science/article/pii/S1051200417302385)
