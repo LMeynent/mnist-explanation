@@ -9,7 +9,7 @@ In their original paper, the researchers give advises on the kind of Deep Neural
  - Use sum-pooling layers abundantly, and prefer them to other types of pooling layers
  - In the linear layers (convolution and fully-connected), constrain biases to be zero or negative
 
-As such, I am using a very simple CNN: 2 convolutional layers with associated average-pooling layers followed by 3 fully-connected layers, using the RELU activation function. I use the Adam optimiser (using PyTorch default values) together with the Categorical Cross-Entropy loss function, over 10 epochs.
+As such, I am using a very simple CNN: 2 convolutional layers with associated average-pooling layers followed by 3 fully-connected layers, using the Leaky RELU activation function. I use the Adam optimiser (using PyTorch default values) together with the Categorical Cross-Entropy loss function, over 10 epochs.
 
 With 98.89% accuracy over the test set, the result is judged satisfactory enough to be used in the explanation framework.
 
@@ -32,6 +32,14 @@ The simple Taylor decomposition uses the Taylor series of the gradient to derive
 The results of this replication qualitatively match the paper's illustration.
 
 ![Results of simple Taylor decomposition on my test DNN](/pic/simple_taylor.png)
+
+### Layer-wise Relevance Propagation
+
+Layer-wise relevance propagation is a conserving backward propagation technique, designed precisely for explanation of DNNs. It is described in more details in another paper by the same author [2]. My implementation borrows a big part of the code proposed by the author as an example on http://heatmapping.org/tutorial
+
+The results of this replication qualitatively match the paper's illustration.
+
+![Results of LRP on my test DNN](/pic/lrp.png)
 
 ## References
 
