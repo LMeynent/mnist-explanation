@@ -9,9 +9,9 @@ In their original paper, the researchers give advises on the kind of Deep Neural
  - Use sum-pooling layers abundantly, and prefer them to other types of pooling layers
  - In the linear layers (convolution and fully-connected), constrain biases to be zero or negative
 
-As such, I am using a very simple CNN: 2 convolutional layers with associated average-pooling layers followed by 3 fully-connected layers, using the Leaky RELU activation function. I use the Adam optimiser (using PyTorch default values) together with the Categorical Cross-Entropy loss function, over 10 epochs.
+As such, I am using a very simple CNN: 2 convolutional layers with associated average-pooling layers followed by 3 fully-connected layers, using the Leaky RELU activation function. For the output, I use a batch-normalisation layer followed by a sigmoid in order to output probabilities of each class. I use the Adam optimiser (using PyTorch default values) together with the Categorical Cross-Entropy loss function, over 10 epochs.
 
-With 98.89% accuracy over the test set, the result is judged satisfactory enough to be used in the explanation framework.
+With 98.79% accuracy over the test set, the result is judged satisfactory enough to be used in the explanation framework.
 
 ## Explanation of Neural Network results
 
@@ -48,6 +48,16 @@ The authors advise using what they call a "translation trick" to help de-noising
 Once again, the results of this replication qualitatively match the paper's illustration.
 
 ![Results of LRP de-noised through 5*5 translations on my test DNN](/pic/lrp_denoised.png)
+
+## Interpretation
+
+Within the interpretation framework, we aim at interpreting concepts learned by a DNN. In order to achieve this, we can use the Activation Maximisation technique: through gradient ascent, we try to produce the input that maximises the response of the model
+
+### Simple Activation Maximisation
+
+In this simpler framework, we simply try to maximise the network's activation through gradient ascent, regularised using a l2 regulation.
+
+![Simple Activation Maximisations for each class](/pic/am.png)
 
 ## References
 
